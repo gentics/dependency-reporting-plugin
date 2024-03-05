@@ -1,0 +1,52 @@
+Rendering a combined report
+
+    Reports, which are placed in a directory structure can be combined into a single report and rendered.
+
++---+
+<project>
+    [...]
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.gentics</groupId>
+                <artifactId>dependency-reporting-plugin</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <id>render</id>
+                        <goals>
+                            <goal>render</goal>
+                        </goals>
+                        <configuration>
+                            <inputDirectory>\${project.build.directory}/reports/</inputDirectory>
+                            <templateFile>\${project.basedir}/report.vm</templateFile>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
++---+
+
+    A basic velocity template for rendering (<<<report.vm>>>) looks like this:
+
++---+
+#[[
+#foreach($component in $report.components)
+    Component "$component.name"
+    #foreach($module in $component.modules)
+        Module "$module.name"
+        #foreach($dependency in $module.dependencies)
+            Name: $dependency.name
+            Current: $dependency.current
+            Latest: $dependency.latest
+            Incremental: $!{dependency.incremental}
+            Minor: $!{dependency.minor}
+            Major: $!{dependency.major}
+            ---
+        #end
+    #end
+#end
+]]#
++---+

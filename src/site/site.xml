@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+   <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.11.2</version>
+  </skin>
+  <body>
+    <menu name="Overview">
+      <item name="Introduction" href="index.html"/>
+      <item name="Goals" href="plugin-info.html"/>
+    </menu>
+    <menu name="Examples">
+      <item name="Generating Report for Java Project" href="examples/reporting-java.html"/>
+      <item name="Generating Report for PHP Project" href="examples/reporting-php.html"/>
+      <item name="Generating Report for Typescript Project" href="examples/reporting-typescript.html"/>
+      <item name="Rendering a combined report" href="examples/rendering-combined.html"/>
+      <item name="Report File" href="examples/report-file.html"/>
+    </menu>
+  </body>
+</project>

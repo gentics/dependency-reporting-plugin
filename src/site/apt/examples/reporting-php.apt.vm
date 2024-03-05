@@ -1,0 +1,40 @@
+Generating Report for PHP Project
+
+    This example shows, how a report for a php project (built with composer) can be generated.
+
+    First, the file <<<dependencies_composer.json>>> needs to be generated with a command like this:
+
++---+
+composer info --direct --no-dev --locked --latest --ignore-platform-reqs -f json > target/dependencies_composer.json
++---+
+
+    This file can then be transformed into the common format with this plugin execution:
+
++---+
+<project>
+    [...]
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.gentics</groupId>
+                <artifactId>dependency-reporting-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>composer-transform</id>
+                        <goals>
+                            <goal>composer-transform</goal>
+                        </goals>
+                        <configuration>
+                            <dependenciesFile>\${project.build.directory}/dependencies_composer.json</dependenciesFile>
+                            <componentName>PHP Component</componentName>
+                            <moduleName>PHP Module</moduleName>
+                            <ignoredNames>
+                            </ignoredNames>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
++---+

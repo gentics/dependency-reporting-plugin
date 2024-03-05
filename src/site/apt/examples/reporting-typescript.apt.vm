@@ -1,0 +1,41 @@
+Generating Report for Typescript Project
+
+    This example shows, how a report for a typescript project (built with npm) can be generated.
+
+    First, the files <<<dependencies.json>>> and <<<outdated.json>>> need to be generated with commands like those:
+
++---+
+npm list --prod --json > target/dependencies.json
+npm outdated --json --long > target/outdated.json
++---+
+
+    Those files can then be transformed into the common format with this plugin execution:
+
++---+
+<project>
+    [...]
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.gentics</groupId>
+                <artifactId>dependency-reporting-plugin</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <id>npm-transform</id>
+                        <goals>
+                            <goal>npm-transform</goal>
+                        </goals>
+                        <configuration>
+                            <dependenciesFile>\${project.build.directory}/dependencies.json</dependenciesFile>
+                            <outdatedFile>\${project.build.directory}/outdated.json</outdatedFile>
+                            <componentName>Typescript Component</componentName>
+                            <moduleName>Typescript Module</moduleName>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
++---+

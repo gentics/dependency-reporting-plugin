@@ -1,0 +1,50 @@
+Generating Report for Java Project
+
+  This example shows, how a report for a java project (built with maven) can be generated.
+
++---+
+<project>
+    [...]
+    <build>
+        <plugins>
+            <!-- The versions plugin is used to generate an aggregate report in xml format -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>versions-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>dependency-updates-aggregate-report</goal>
+                        </goals>
+                        <configuration>
+                            <formats>xml</formats>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- The dependency reporting plugin will transform the aggregate report in the common format -->
+            <plugin>
+                <groupId>com.gentics</groupId>
+                <artifactId>dependency-reporting-plugin</artifactId>
+                <version>${project.version}</version>
+                <executions>
+                    <execution>
+                        <id>java-transform</id>
+                        <goals>
+                            <goal>java-transform</goal>
+                        </goals>
+                        <configuration>
+                            <reportFile>\${project.build.directory}/dependency-updates-aggregate-report.xml</reportFile>
+                            <componentName>Dependency Reporting Plugin</componentName>
+                            <moduleName>Java Backend</moduleName>
+                            <ignoredNames>
+                            </ignoredNames>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
++---+

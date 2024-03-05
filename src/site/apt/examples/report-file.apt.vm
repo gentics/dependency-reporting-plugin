@@ -1,0 +1,101 @@
+Example Report File
+
+  This is the example report file generated for this plugin.
+
++---+
+#[[
+{
+  "components" : [ {
+    "name" : "Dependency Reporting Plugin",
+    "modules" : [ {
+      "name" : "Java Backend",
+      "dependencies" : [ {
+        "name" : "com.fasterxml.jackson.core:jackson-core",
+        "current" : "2.14.1",
+        "latest" : "2.16.1",
+        "incremental" : "2.14.3",
+        "minor" : "2.16.1",
+        "major" : null
+      }, {
+        "name" : "com.fasterxml.jackson.core:jackson-databind",
+        "current" : "2.14.1",
+        "latest" : "2.16.1",
+        "incremental" : "2.14.3",
+        "minor" : "2.16.1",
+        "major" : null
+      }, {
+        "name" : "com.fasterxml.jackson.dataformat:jackson-dataformat-xml",
+        "current" : "2.14.1",
+        "latest" : "2.16.1",
+        "incremental" : "2.14.3",
+        "minor" : "2.16.1",
+        "major" : null
+      }, {
+        "name" : "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml",
+        "current" : "2.14.1",
+        "latest" : "2.16.1",
+        "incremental" : "2.14.3",
+        "minor" : "2.16.1",
+        "major" : null
+      }, {
+        "name" : "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider",
+        "current" : "2.14.1",
+        "latest" : "2.16.1",
+        "incremental" : "2.14.3",
+        "minor" : "2.16.1",
+        "major" : null
+      }, {
+        "name" : "org.apache.commons:commons-collections4",
+        "current" : "4.4",
+        "latest" : "4.4",
+        "incremental" : null,
+        "minor" : null,
+        "major" : null
+      }, {
+        "name" : "org.apache.maven:maven-core",
+        "current" : "3.6.3",
+        "latest" : "4.0.0-alpha-12",
+        "incremental" : null,
+        "minor" : "3.9.6",
+        "major" : "4.0.0-alpha-12"
+      }, {
+        "name" : "org.apache.maven:maven-plugin-api",
+        "current" : "3.6.3",
+        "latest" : "4.0.0-alpha-12",
+        "incremental" : null,
+        "minor" : "3.9.6",
+        "major" : "4.0.0-alpha-12"
+      }, {
+        "name" : "org.apache.maven.plugin-tools:maven-plugin-annotations",
+        "current" : "3.6.4",
+        "latest" : "3.11.0",
+        "incremental" : null,
+        "minor" : "3.11.0",
+        "major" : null
+      }, {
+        "name" : "org.apache.maven.shared:maven-dependency-tree",
+        "current" : "3.2.1",
+        "latest" : "3.2.1",
+        "incremental" : null,
+        "minor" : null,
+        "major" : null
+      }, {
+        "name" : "org.apache.maven.skins:maven-fluido-skin",
+        "current" : "1.11.2",
+        "latest" : "2.0.0-M8",
+        "incremental" : null,
+        "minor" : "1.12.0",
+        "major" : "2.0.0-M8"
+      }, {
+        "name" : "org.apache.velocity:velocity-engine-core",
+        "current" : "2.3",
+        "latest" : "2.3",
+        "incremental" : null,
+        "minor" : null,
+        "major" : null
+      } ]
+    } ]
+  } ]
+}
+]]#
++---+
